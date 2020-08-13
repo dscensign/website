@@ -4,6 +4,6 @@ node_js:
 script:
     - echo "Deploy it NOW!!!!"
 install:
-    - npm install -g firebase-tools tslint typescrpit
+    - npm install -g firebase-tools tslint typescript
 after_success:
     - firebase deploy --project dscensign-78896 --token $FIREBASE_TOKEN
