@@ -1,0 +1,10 @@
+fastapi
+jinja2
+uvicorn
+gunicorn
+sqlalchemy
+async-generator
+async-exit-stack
+postgres
+psycopg2
+aiofiles
