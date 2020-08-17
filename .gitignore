@@ -1,3 +1,8 @@
 # Hello World hehe
 venv/
 .vscode/
+.env
+__pycache__/
+assets/js/script.js
+assets/js/transit.js
+assets/css/styles.css

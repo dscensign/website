@@ -1,0 +1,214 @@
+{% extends "layout.html" %} 
+{% block content%}
+
+<!-- Masthead -->
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <a class="logo" href="/" title="Home">
+                    <img class="img-fluid mx-auto d-block mb-4" alt="DSC Logo" src="{{ url_for('static', path='/img/logo.png') }}">
+                </a>
+                <h1 class="text-blue">DSC Ensign College</h1>
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <h3 class="text-blue font-weight-light mb-5">a Developer Student Clubs (DSC) program run by Google Developers</h3>
+                <a href="/join" class="btn btn-primary btn-xl mb-5">Join Our Club</a>
+                <br>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#about">Learn More</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark py-3" id="mainNav">
+    <div class="container">
+        <a href="/"><img class="logo" src="{{ url_for('static', path='/img/logo-nav.png') }}" alt="" title="" /></img>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse ml-4" id="navbarResponsive">
+            <ul class="navbar-nav my-2 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#opportunity">Opportunity</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#mission">Mission</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#coreteam">Our Team</a>
+                </li>
+            </ul>
+        </div>
+        <nav class="nav social-nav pull-right d-none d-lg-inline">
+            <a href="https://www.instagram.com/dscensign" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com/dscensign" target="_blank"><i class="fab fa-twitter text-white"></i></a>
+            <a href="https://www.facebook.com/dscensign" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:team@dscensign.com"><i class="fas fa-envelope"></i></a>
+        </nav>
+    </div>
+</nav>
+
+
+<!-- About -->
+<section class="page-section bg-white" id="about">
+    <div class="container text-center">
+        <h2 class="text-center mt-0">About Developer Student Clubs</h2>
+        <hr class="divider my-4">
+        <p>
+            Developer Student Clubs (DSC) are community groups for students from any academic background in their undergraduate or graduate term. By joining a DSC, students build their professional and personal network, get access to Google developer resources, and
+            work together to build solutions for local problems in a peer-to-peer learning environment. In short terms, it is the fastest bridge from theory to practice.
+        </p>
+        <!--<div class="row stats-row">
+            <div class="stats-col text-center col-md-3 col-sm-6 mt-3 mb-5">
+                <div class="circle">
+                    <span class="stats-no bg-blue count">291</span> International Chapters
+                </div>
+            </div>
+            <div class="stats-col text-center col-md-3 col-sm-6 mt-3 mb-5">
+                <div class="circle">
+                    <span class="stats-no bg-red count">118</span> National Chapters
+                </div>
+            </div>
+            <div class="stats-col text-center col-md-3 col-sm-6 mt-3 mb-5">
+                <div class="circle">
+                    <span class="stats-no bg-yellow count">27</span> SDCCD Students
+                </div>
+            </div>
+            <div class="stats-col text-center col-md-3 col-sm-6 mt-3 mb-5">
+                <div class="circle">
+                    <span class="stats-no bg-green count">8</span> Different Majors
+                </div>
+            </div>
+        </div>-->
+    </div>
+</section>
+<!-- /About -->
+
+<!-- Opportunity Section -->
+<section class="page-section bg-blue text-white" id="opportunity">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-white mt-0">Opportunity Awaits</h2>
+                <hr class="divider light my-4">
+                <p class="text-white mb-4">Join us and be one of the first students ever in North America to have access to Google's amazing Developer Student Club program! In addition to meeting and collaborating with amazing students, you can join us in a variety of other activities. We have needs for all types of talent from marketing to recruiting to developing and more!</p>
+                <h4 class="text-white mb-5">No computer experience is necessary!</h4>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="/join">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="page-section bg-white" id="mission">
+    <div class="container">
+        <h2 class="text-center mt-0">We're on a Mission</h2>
+        <hr class="divider my-4">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fas fa-4x fa-graduation-cap text-blue mb-4"></i>
+                    <h3 class="h4 mb-2 text-blue">Education</h3>
+                    <p class="text-muted mb-0">Through our exclusive complimentary access to Google Qwiklabs, club members have the opportunity to earn industry recognized badges which demonstrate to the world that you've mastered a skill set with Google Cloud Platform.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fas fa-4x fa-users text-red mb-4"></i>
+                    <h3 class="h4 mb-2 text-red">Collaboration</h3>
+                    <p class="text-muted mb-0">Our dedication to incorporating the entire campus community is unprecedented in any campus club history. By utilizing the vast talents across all our collective majors we can make a truly lasting real-world impact.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fas fa-4x fa-laptop-code text-yellow mb-4"></i>
+                    <h3 class="h4 mb-2 text-yellow">Innovation</h3>
+                    <p class="text-muted mb-0">Of course, developing innovative products is a keystone of our vision. Education and Collaboration provide the foundation necessary for our technical team to bring our vision to life through the wonder of technology.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fas fa-4x fa-heart text-green mb-4"></i>
+                    <h3 class="h4 mb-2 text-green">Motivation</h3>
+                    <p class="text-muted mb-0">At the end of the day our mission is simple: to bring forth positive change in our local community. The tools we've set in place will ensure that we have the opportunity to change lives and make our world a better place.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Team Section -->
+<section class="page-section bg-gradient" id="coreteam">
+    <div class="container">
+        <h2 class="text-center mt-0">DSC Ensign Core Team 2021</h2>
+        <hr class="divider my-4">
+
+        <div class="row">
+            <!--Ricardo Prins-->
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="mt-5 founder-wrapper bg-blue">
+                    <div class="headshot-container mx-auto mb-4">
+                        <img class="headshot img-responsive rounded-circle mb-4" src="{{ url_for('static', path='/img/ricardo.jpg') }}">
+                        <div class="headshot-overlay align-middle text-center">
+                            <a href="https://discord.gg/7QVrpPs" target="_blank"><i class="fab fa-2x fa-discord text-white mr-4"></i></a>
+                            <a href="https://www.linkedin.com/company/dscsdmc" target="_blank"><i class="fab fa-2x fa-linkedin-in text-white mr-4"></i></a>
+                            <a href="mailto:info@dscsdmc.org"><i class="fas fa-2x fa-envelope text-white"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="h4 mb-2">Ricardo Prins</h3>
+                    <p class="text-muted mb-0 text-blue">DSC Lead</p>
+                </div>
+            </div>
+            <!--Lucas Castro-->
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="mt-5 founder-wrapper bg-red">
+                    <div class="headshot-container mx-auto mb-4">
+                        <img class="headshot img-responsive rounded-circle mb-4" src="{{ url_for('static', path='/img/lucas.jpg') }}">
+                        <div class="headshot-overlay align-middle">
+                            <a href="https://discord.gg/7QVrpPs" target="_blank"><i class="fab fa-2x fa-discord text-white mr-4"></i></a>
+                            <a href="https://www.linkedin.com/company/dscsdmc" target="_blank"><i class="fab fa-2x fa-linkedin-in text-white mr-4"></i></a>
+                            <a href="mailto:info@dscsdmc.org"><i class="fas fa-2x fa-envelope text-white"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="h4 mb-2">Lucas Castro</h3>
+                    <p class="text-muted mb-0 text-blue">DSC Co-Lead</p>
+                </div>
+            </div>
+            <!--Recruiting-->
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="mt-5 founder-wrapper bg-yellow">
+                    <div class="headshot-container mx-auto mb-4">
+                        <img class="headshot img-responsive rounded-circle mb-4" src="{{ url_for('static', path='/img/you.jpg') }}">
+                        <div class="headshot-overlay align-middle">
+                            <a href="https://discord.gg/7QVrpPs" target="_blank"><i class="fab fa-2x fa-discord text-white mr-4"></i></a>
+                            <a href="https://www.linkedin.com/company/dscsdmc" target="_blank"><i class="fab fa-2x fa-linkedin-in text-white mr-4"></i></a>
+                            <a href="mailto:info@dscsdmc.org"><i class="fas fa-2x fa-envelope text-white"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="h4 mb-2">You!</h3>
+                    <p class="text-muted mb-0 text-blue">We are recruiting!</p>
+                    <p class="text-muted mb-2"><i>Reach out to know positions available</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="page-section bg-blue bg-image text-white">
+    <div class="container text-center">
+        <p><i class="fa fa-4x fa-bullhorn" aria-hidden="true"></i></p>
+        <h2 class="mb-4">Calling All Majors</h2>
+        <p class="mb-4">The Developer Student Club Ensign College welcomes all who want to be a part of something bigger than themselves. Regardless of your expertise, background or major we want to hear from you! Remember, computer science is simply the tool
+            which connects all parts of life.</p>
+        <a class="btn btn-light btn-xl" href="/join">Join Our Club</a>
+    </div>
+</section>
+
+{% endblock %}

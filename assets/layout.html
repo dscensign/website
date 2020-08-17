@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3182286448524025');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3182286448524025&ev=PageView&noscript=1"/></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="DSC Ensign College Chapter website" />
+    <meta name="author" content="Ricardo Prins" />
+
+    <title>DSC Ensign College</title>
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='/img/favicon.png') }}" />
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    
+    <!-- Third party plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ url_for('static', path='/css/styles.min.css') }}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    {% block content%}
+    {% endblock %}
+
+<!-- Footer -->
+<footer class="bg-blue py-5">
+    <div class="container">
+        <div class="text-center mt-0 mb-3"><img class="logo" src="{{ url_for('static', path='/img/logo-nav.png') }}" alt="" title=""></i>
+        </div>
+        <div class="small text-center">Copyright &copy; 2020<br> DSC Ensign College</div>
+        <div class="small text-center">
+            <a href="https://www.instagram.com/dscensign" target="_blank"><i class="fab fa-2x fa-instagram text-white mr-4"></i></a>
+            <a href="https://www.twitter.com/dscensign" target="_blank"><i class="fab fa-2x fa-twitter text-white mr-4"></i></a>
+            <a href="https://www.facebook.com/dscensign" target="_blank"><i class="fab fa-2x fa-facebook text-white mr-4"></i></a>
+            <a href="mailto:team@dscensign.com"><i class="fas fa-2x fa-envelope text-white"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JS-->        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{{ url_for('static', path='/js/script.min.js') }}"></script>
+<script js>
+    $(document).ready(function() {
+        stickyNavBar();
+        $('[data-toggle="tooltip"]').tooltip();
+
+    });
+    function runCounter() {
+        var counters = $(".count");
+        var countersQuantity = counters.length;
+        var counter = [];
+        for (i = 0; i < countersQuantity; i++) {
+            if (isScrolledIntoView(counters[i])) {
+                $(counters[i]).removeClass('count');
+                counter[i] = parseInt(counters[i].innerHTML);
+            }
+        }
+        var count = function(start, value, id) {
+            var localStart = start;
+            setInterval(function() {
+                if (localStart < value) {
+                    localStart++;
+                    counters[id].innerHTML = localStart;
+                }
+            }, 0);
+        }
+        for (j = 0; j < countersQuantity; j++) {
+            count(0, counter[j], j);
+        }
+    }
+    function isScrolledIntoView(el) {
+        var rect = el.getBoundingClientRect();
+        var elemTop = rect.top;
+        var elemBottom = rect.bottom;
+        // Only completely visible elements return true:
+        var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+        // Partially visible elements return true:
+        //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+        return isVisible;
+    }
+    function stickyNavBar() {
+        var scrollValue = $(window).scrollTop();
+        if (scrollValue >= $('header').outerHeight()) {
+            $('.navbar').addClass('fixed-top');
+            $('#about').css("margin-top", "72px");
+        } else {
+            $('.navbar').removeClass('fixed-top');
+            $('#about').css("margin-top", "0px");
+        }
+    }
+    $(window).on('scroll', function(event) {
+        stickyNavBar();
+        runCounter();
+    });
+    $(window).on('resize', function() {
+        globalww = $(window).width();
+        globalwh = ($(window).height() + 60);
+        $('#bubbles-container').width(globalww).height(globalwh);
+        stickyNavBar();
+    });
+</script>
+<script src="{{ url_for('static', path='/js/transit.min.js') }}"></script>
+<script>
+    function styleDynamic() {
+        var colorOptions = ['#ea4335', '#fbbc05', '#34a753', '#4184f4'];
+        //return {bubbles_color:colorOptions[Math.random()%4], stroke_width:0, stroke_color :"black"};
+        return {
+            bubbles_color: colorOptions[Math.floor(Math.random() * colorOptions.length)],
+            stroke_width: 0,
+            stroke_color: "black"
+        };
+    }
+    var background = {};
+    var globalww = $(window).width();
+    var globalwh = ($(window).height() + 60);
+    background.initializr = function() {
+        var $this = this;
+        //option
+        $this.id = "background_css3";
+        $this.style = styleDynamic(); //{bubbles_color:"yellow",stroke_width:0, stroke_color :"black"};
+        $this.bubbles_number = 15;
+        $this.speed = [1500, 8000]; //milliseconds
+        $this.max_bubbles_height = $this.height;
+        $this.shape = false // 1 : circle | 2 : triangle | 3 : rect | false :random
+        if ($("#" + $this.id).lenght > 0) {
+            $("#" + $this.id).remove();
+        }
+        $this.object = $("<div id='bubbles-container' style='z-index:-1;margin:0;padding:0; overflow:hidden;position:fixed; top:0;' id='" + $this.id + "'> </div>'").appendTo("body");
+        //$this.ww = globalww;
+        //$this.wh = globalwh;
+        $this.width = $this.object.width(globalww);
+        $this.height = $this.object.height(globalwh);
+        $("body").prepend("<style>.shape_background {transform-origin:center; width:80px; height:80px; position: absolute}</style>");
+        for (i = 0; i < $this.bubbles_number; i++) {
+            $this.generate_bubbles()
+        }
+    }
+    background.generate_bubbles = function() {
+        var $this = this;
+        $this.wh = globalwh;
+        $this.ww = globalww;
+        var base = $("<div class='shape_background'></div>");
+        var shape_type = $this.shape ? $this.shape : Math.floor($this.rn(1, 1));
+        $this.style = styleDynamic();
+        if (shape_type == 1) {
+            var bolla = base.css({
+                borderRadius: "50%",
+                background: $this.style.bubbles_color
+            })
+        } else if (shape_type == 2) {
+            var bolla = base.css({
+                width: 0,
+                height: 0,
+                "border-style": "solid",
+                "border-width": "0 40px 69.3px 40px",
+                "border-color": "transparent transparent " + $this.style.bubbles_color + " transparent",
+                background: "transparent"
+            });
+        } else {
+            var bolla = base.css({
+                background: $this.style.bubbles_color
+            });
+        }
+        var rn_size = $this.rn(.8, 1.2);
+        bolla.css({
+            "transform": "scale(" + rn_size + ") rotate(" + $this.rn(-360, 360) + "deg)",
+            top: $this.wh + 100,
+            left: $this.rn(-60, $this.ww + 60)
+        });
+        bolla.appendTo($this.object);
+        bolla.transit({
+            top: $this.rn($this.wh * .15, $this.wh * .6),
+            "transform": "scale(" + rn_size + ") rotate(" + $this.rn(-360, 360) + "deg)",
+            opacity: 0
+        }, $this.rn($this.speed[0], $this.speed[1]), function() {
+            $(this).remove();
+            $this.generate_bubbles();
+        })
+    }
+    background.rn = function(from, to, arr) {
+        if (arr) {
+            return Math.random() * (to - from + 1) + from;
+        } else {
+            return Math.floor(Math.random() * (to - from + 1) + from);
+        }
+    }
+    background.initializr();
+</script>
+</body>
+
+</html>

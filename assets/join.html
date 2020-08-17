@@ -1,0 +1,87 @@
+{% extends "layout.html"%}
+{% block content%}
+<!---->
+
+<!--iframe styling-->
+<style>
+  @media (min-width: 400px) {
+    #iframe {
+     max-height: 5100px;
+    }
+  }
+  @media (min-width: 500px) {
+    #iframe {
+     max-height: 4800px;
+    }
+  }
+  @media (min-width: 600px) {
+    #iframe {
+     max-height: 4700px;
+    }
+  }
+  @media (min-width: 700px) {
+    #iframe {
+     max-height: 4700px;
+    }
+  }
+  @media (min-width: 800px) {
+    #iframe {
+     max-height: 4000px;
+    }
+  }
+</style>
+
+<!-- Masthead -->
+<header>
+    <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <a class="logo" href="/" title="Home">
+                    <img class="img-fluid mx-auto d-block mb-4" alt="DSC Logo" src="{{ url_for('static', path='/img/logo.png') }}">
+                </a>
+                <h1 class="text-blue">DSC Ensign College</h1>
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <h3 class="text-blue font-weight-light mb-5">a Developer Student Clubs (DSC) program run by Google Developers</h3>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark py-3" id="mainNav">
+    <div class="container">
+        <a href="/"><img class="logo" src="{{ url_for('static', path='/img/logo-nav.png') }}" alt="" title="" /></img>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse ml-4" id="navbarResponsive">
+            <ul class="navbar-nav my-2 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#opportunity">Opportunity</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#mission">Mission</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#coreteam">Our Team</a>
+                </li>
+            </ul>
+        </div>
+        <nav class="nav social-nav pull-right d-none d-lg-inline">
+            <a href="https://www.instagram.com/dscensign" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com/dscensign" target="_blank"><i class="fab fa-twitter text-white"></i></a>
+            <a href="https://www.facebook.com/dscensign" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:team@dscensign.com"><i class="fas fa-envelope"></i></a>
+        </nav>
+    </div>
+</nav>
+
+<!--Join form-->
+<iframe id="iframe" src="https://forms.gle/FGTeKzamPyDMTwLh6" style="width:1920px; max-width:100%; height:3100px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+{% endblock %}
