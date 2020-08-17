@@ -1,13 +1,22 @@
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/dsc-ensign-college/website', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/dsc-ensign-cloudrun:$COMMIT_SHA', '.']
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/dsc-ensign-college/website']
+    args: ['push', 'gcr.io/$PROJECT_ID/dsc-ensign-cloudrun:$COMMIT_SHA']
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args: ['run', 'deploy', 'dsc-ensign-cloudrun', '--image', 'gcr.io/dsc-ensign-college/website', '--region', 'us-central1', '--platform', 'managed']
+    args:
+    - 'run'
+    - 'deploy'
+    - 'dsc-ensign-cloudrun'
+    - '--image'
+    - 'gcr.io/$PROJECT_ID/dsc-ensign-cloudrun:$COMMIT_SHA'
+    - '--region'
+    - 'us-central1'
+    - '--platform'
+    - 'managed'
   images:
-  - gcr.io/dsc-ensign-college/website
+  - 'gcr.io/$PROJECT_ID/dsc-ensign-cloudrun:$COMMIT_SHA'
