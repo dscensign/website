@@ -22,23 +22,13 @@ steps:
         - $_SERVICE_NAME
         - '--platform=managed'
         - '--image=$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
-        - >-
-          --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID,$_LABELS
+        - '--labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID,$_LABELS'
         - '--region=$_DEPLOY_REGION'
         - '--quiet'
       id: Deploy
       entrypoint: gcloud
   images:
     - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
-  options:
-    substitutionOption: ALLOW_LOOSE
-  substitutions:
-    _PLATFORM: managed
-    _SERVICE_NAME: dsc-ensign-cloudrun
-    _DEPLOY_REGION: us-central1
-    _GCR_HOSTNAME: us.gcr.io
-    _LABELS: gcb-trigger-id=266663dd-6382-469b-a850-959e7eb6ab2d
-    _TRIGGER_ID: 266663dd-6382-469b-a850-959e7eb6ab2d
   tags:
     - gcp-cloud-build-deploy-cloud-run
     - gcp-cloud-build-deploy-cloud-run-managed
