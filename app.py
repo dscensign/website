@@ -3,7 +3,6 @@ Python file for webpage deployment for DSC Ensign College
 
 """
 
-
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
