@@ -24,9 +24,26 @@ def index(request: Request):
         'request': request
     })
 
+
 @app.get('/join')
 def join(request: Request):
     """Join page"""
     return templates.TemplateResponse('join.html', {
         'request': request
     })
+
+
+@app.get('/login')
+def login(request: Request):
+    """Login area"""
+    return templates.TemplateResponse('login.html', {
+        'request': request
+    })
+
+@app.get('/privacy')
+def privacy(request: Request):
+    """Privacy Policy"""
+    return templates.TemplateResponse('privacy.html', {
+        'request': request
+    })
+

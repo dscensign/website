@@ -8,3 +8,4 @@ async-exit-stack
 postgres
 psycopg2
 aiofiles
+python-multipart
